@@ -33,7 +33,7 @@ class character:
         return stats
 
 
-#global scope 
+#global scope test 
 if __name__ == "__main__":
     player = character("chris","strongman")
     print(player.get_stats())

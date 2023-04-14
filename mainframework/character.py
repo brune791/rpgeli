@@ -10,8 +10,7 @@ class character:
         class_name:string name if charcter class 
         strength: int physical power carrying capacity defnense 
         dexterity:
-        idea 
-    only allow people to level up strength but give them 
+        idea: only allow people to level up strength but give them 
     the idea that they can level up all 6 others but someone 
     tells them not too
     
@@ -21,8 +20,7 @@ class character:
         self.name = name
         self.class_name = class_name
 
-        #intializing all remaing stats to 0 (we will creat functions to set 
-        # them)
+        #intializing all remaing stats to 0 (we will creat functions to set them)
         self.strength = 0 
         self.dexterity = 0
 
@@ -31,6 +29,9 @@ class character:
         stats = f"Name: {self.name}\nClass: {self.class_name}\n"
         stats += f"strength: {self.strength}\nDexterty: {self.dexterity}"
         return stats
+
+
+
 
 
 #global scope test 

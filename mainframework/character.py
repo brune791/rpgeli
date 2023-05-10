@@ -24,6 +24,9 @@ class character:
         self.strength = 0 
         self.dexterity = 0
 
+    def workout(self):
+        self.strength += 1 
+
     def get_stats(self) -> str:
         """return a formatted string of stats """
         stats = f"Name: {self.name}\nClass: {self.class_name}\n"
@@ -38,3 +41,6 @@ class character:
 if __name__ == "__main__":
     player = character("chris","strongman")
     print(player.get_stats())
+    player.workout()
+    print(player.get_stats())
+    print(player.strength)

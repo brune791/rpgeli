@@ -60,9 +60,9 @@ def story_Two_Questions_Base(centance,centance2,path1,path2,consequence1,consequ
 
 
 
-def story_Qcuestions_Base_V2():
-    
-
-
-
-
+def storyline_preset_V2(story_cent):
+    length_Of_List = len(story_cent)
+    num_Up = 0
+    for i in range(length_Of_List):
+        print(story_cent[num_Up])
+        num_Up = num_Up + 1 

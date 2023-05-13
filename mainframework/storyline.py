@@ -1,6 +1,6 @@
 from story_func import character_Creation
 from story_func import story_Two_Questions_Base
-
+from story_func import storyline_preset_V2
 
 
 def chapter_One():
@@ -21,4 +21,6 @@ def chapter_One():
     
     print("this is the end of demo mr teacher i was not able to get the level up system to work and i could not ask you sense i have been sick all this week and missed school im sorry")
 
-chapter_One()
+
+storyline_preset_V2(("ma","la","ba"))
+"chapter_One()"

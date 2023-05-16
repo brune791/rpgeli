@@ -65,4 +65,12 @@ def storyline_preset_V2(story_cent):
     num_Up = 0
     for i in range(length_Of_List):
         print(story_cent[num_Up])
+        input("press enter to continue - >")
         num_Up = num_Up + 1 
+
+def storyline_Questions_V2(story_Questions):
+    length_Of_List = len(story_Questions)
+    user_answer = input("1 or 2 ")
+    for i in range(length_Of_List):
+        if user_answer == 1:
+            print()

@@ -22,5 +22,7 @@ def chapter_One():
     print("this is the end of demo mr teacher i was not able to get the level up system to work and i could not ask you sense i have been sick all this week and missed school im sorry")
 
 
-storyline_preset_V2(("ma","la","ba"))
+storyline_preset_V2(("you wake up and find your self in a dimly lit room","as you stand up and look around you see a big metal door made of hard iron",
+                    "1: go to door?","2: stay were you are.", "you make your way to the door and try to open it","you stay and stand around boring "))
 "chapter_One()"
+

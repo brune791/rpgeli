@@ -39,6 +39,7 @@ def story_part(cent,pint,path1,path2):
 
 def story_Two_Questions_Base(centance,centance2,path1,path2,consequence1,consequence2):
 
+
     """
     centance1,2: first centance in story line 
     path1,2: diffrent paths user can take
@@ -59,6 +60,20 @@ def story_Two_Questions_Base(centance,centance2,path1,path2,consequence1,consequ
             print("Invalid input.")
 
 
+"""
+Version 2 of my program 
+"""
+
+"""
+uses a list to write the story then prints it out
+first finds length of the list 
+then sets the num_Up to 0 to grab the first centance in the list 
+next puts the length of the list into the range loop and runs it that many times 
+every time it runs it adds a +1 to num_Up until it gets to the last item of the list!
+"""
+
+#version two uses a list instead and gets it to answer all you need to do 
+#is put in centance frames and your good 
 
 def storyline_preset_V2(story_cent):
     length_Of_List = len(story_cent)
@@ -66,11 +81,74 @@ def storyline_preset_V2(story_cent):
     for i in range(length_Of_List):
         print(story_cent[num_Up])
         input("press enter to continue - >")
-        num_Up = num_Up + 1 
+        num_Up = num_Up + 1
+
+
 
 def storyline_Questions_V2(story_Questions):
-    length_Of_List = len(story_Questions)
+    length_Of_Story_Qustions = len(story_Questions)
     user_answer = input("1 or 2 ")
-    for i in range(length_Of_List):
+    user_answer
+    for i in range(length_Of_Story_Qustions):
         if user_answer == 1:
             print()
+        elif user_answer == 2:
+            print()
+        while user_answer != 1 or 2:
+            if user_answer == 1:
+                print()
+            elif user_answer == 2:
+                print()
+
+                
+"""
+class rooms is a class that you set meaning full stuff in
+your rooms for the game there are amount of exits all the options
+in the room that you can do npc's to talk to and items you can use
+"""
+
+class Room:
+    def __init__(self, name, actions, storyline):
+        self.name = name
+        self.actions = actions
+        self.storyline = storyline
+        self.connectedRooms = None
+
+    def display_storyline(self):
+        print(self.storyline + "\n")
+
+    def display_exits(self):
+        print("Exits available in ", self.name + ":")
+        number = 1
+        for room in self.connectedRooms:
+            print("Exit " + str(number) + " -", room.name)
+            number += 1
+        print("")
+
+    def display_actions(self):
+        print("Actions available in", self.name + ":")
+        number = 1
+        for action in self.actions:
+            print(str(number) + " -", action)
+            number += 1
+        print("")
+
+
+# Example usage:
+kitchen_actions = ["Open fridge", "Cook meal", "Wash dishes"]
+kitchen_storyline = "You find yourself in a small kitchen with a pleasant aroma."
+
+kitchen = Room("Kitchen", kitchen_actions, kitchen_storyline)
+
+livingRoom_actions = ["Go to the Kitchen", "Sit on a sofa"]
+livingRoom_storyline = "You find yourself in a small living room, you realize it's a dead end. But theres a sofa."
+livingRoom = Room("Living Room", livingRoom_actions, livingRoom_storyline)
+kitchen.connectedRooms = [livingRoom]
+livingRoom.connectedRooms = [kitchen]
+
+# Display room information
+kitchen.display_storyline()
+kitchen.display_actions()
+kitchen.display_exits()
+
+    

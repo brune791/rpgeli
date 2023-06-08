@@ -111,8 +111,18 @@ class Room:
     def __init__(self, name, actions, storyline):
         self.name = name
         self.actions = actions
+        # self.response = response 
         self.storyline = storyline
         self.connectedRooms = None
+
+    def display_user_Input(self):
+        user_Input = input("1:storline inputs,2:exits ")
+        print(user_Input)
+        numberized = int(user_Input)
+        if numberized == 1:
+            self.display_actions()
+        elif numberized == 2:
+           self.display_exits()
 
     def display_storyline(self):
         print(self.storyline + "\n")
@@ -133,6 +143,13 @@ class Room:
             number += 1
         print("")
 
+    def storyline_preset_V2(self,story_cent):
+        length_Of_List = len(story_cent)
+        num_Up = 0
+        for i in range(length_Of_List):
+            print(story_cent[num_Up])
+            input("press enter to continue - >")
+            num_Up = num_Up + 1
 
 # Example usage:
 kitchen_actions = ["Open fridge", "Cook meal", "Wash dishes"]
@@ -147,8 +164,9 @@ kitchen.connectedRooms = [livingRoom]
 livingRoom.connectedRooms = [kitchen]
 
 # Display room information
-kitchen.display_storyline()
+"""kitchen.display_storyline()
 kitchen.display_actions()
-kitchen.display_exits()
+kitchen.display_exits()"""
+kitchen.display_user_Input()
 
     

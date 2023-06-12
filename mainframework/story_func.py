@@ -115,6 +115,16 @@ class Room:
         self.storyline = storyline
         self.connectedRooms = None
 
+    #prints out storyline once you enter room 
+    def display_storyline_preset(self):
+        length_Of_List = len(story_cent)
+        num_Up = 0
+        for i in range(length_Of_List):
+            print(story_cent[num_Up])
+            input("press enter to continue - >")
+            num_Up = num_Up + 1
+
+#displayes the first options users can use 
     def display_user_Input(self):
         user_Input = input("1:storline inputs,2:exits ")
         print(user_Input)
@@ -124,9 +134,7 @@ class Room:
         elif numberized == 2:
            self.display_exits()
 
-    def display_storyline(self):
-        print(self.storyline + "\n")
-
+#after user input gets answer prints out exits if certain number is pressed wich currently is 2 
     def display_exits(self):
         print("Exits available in ", self.name + ":")
         number = 1
@@ -134,7 +142,8 @@ class Room:
             print("Exit " + str(number) + " -", room.name)
             number += 1
         print("")
-
+#shows the actions that could happen in the room examples could include 
+#searching room picking up item ect 
     def display_actions(self):
         print("Actions available in", self.name + ":")
         number = 1
@@ -143,30 +152,23 @@ class Room:
             number += 1
         print("")
 
-    def storyline_preset_V2(self,story_cent):
-        length_Of_List = len(story_cent)
-        num_Up = 0
-        for i in range(length_Of_List):
-            print(story_cent[num_Up])
-            input("press enter to continue - >")
-            num_Up = num_Up + 1
 
-# Example usage:
-kitchen_actions = ["Open fridge", "Cook meal", "Wash dishes"]
-kitchen_storyline = "You find yourself in a small kitchen with a pleasant aroma."
+def test():
+    # Example usage:
+    kitchen_actions = ["Open fridge", "Cook meal", "Wash dishes"]
+    kitchen_storyline = "You find yourself in a small kitchen with a pleasant aroma."
 
-kitchen = Room("Kitchen", kitchen_actions, kitchen_storyline)
+    kitchen = Room("Kitchen", kitchen_actions, kitchen_storyline)
 
-livingRoom_actions = ["Go to the Kitchen", "Sit on a sofa"]
-livingRoom_storyline = "You find yourself in a small living room, you realize it's a dead end. But theres a sofa."
-livingRoom = Room("Living Room", livingRoom_actions, livingRoom_storyline)
-kitchen.connectedRooms = [livingRoom]
-livingRoom.connectedRooms = [kitchen]
+    livingRoom_actions = ["Go to the Kitchen", "Sit on a sofa"]
+    livingRoom_storyline = "You find yourself in a small living room, you realize it's a dead end. But theres a sofa."
+    livingRoom = Room("Living Room", livingRoom_actions, livingRoom_storyline)
+    kitchen.connectedRooms = [livingRoom]
+    livingRoom.connectedRooms = [kitchen]
 
-# Display room information
-"""kitchen.display_storyline()
-kitchen.display_actions()
-kitchen.display_exits()"""
-kitchen.display_user_Input()
-
-    
+    # Display room information
+    """kitchen.display_storyline()
+    kitchen.display_actions()
+    kitchen.display_exits()"""
+    kitchen.display_user_Input()
+test()

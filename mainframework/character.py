@@ -3,6 +3,7 @@ The base class for the player and any npc in the game.
 will have atributes """
 
 class character:
+
     """ Any playing and non-playing charcters share these 
     traits
     Attriobutes:
@@ -13,11 +14,14 @@ class character:
         idea: only allow people to level up strength but give them 
     the idea that they can level up all 6 others but someone 
     tells them not too
-    
     """
+
     def __init__(self,name: str, class_name ="") -> None:
+
         "reprents single charcters with specific names "
+
         self.name = name
+        
         self.class_name = class_name
 
         #intializing all remaing stats to 0 (we will creat functions to set them)
@@ -29,6 +33,7 @@ class character:
 
     def get_stats(self) -> str:
         """return a formatted string of stats """
+        
         stats = f"Name: {self.name}\nClass: {self.class_name}\n"
         stats += f"strength: {self.strength}\nDexterty: {self.dexterity}"
         return stats
